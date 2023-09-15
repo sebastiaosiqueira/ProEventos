@@ -1,0 +1,17 @@
+C:\Users\3346.ADM-UCDB\Desktop\PROEVENTOS\back\src\ProEventos.Application\bin\Debug\net5.0\ProEventos.Application.deps.json
+C:\Users\3346.ADM-UCDB\Desktop\PROEVENTOS\back\src\ProEventos.Application\bin\Debug\net5.0\ProEventos.Application.dll
+C:\Users\3346.ADM-UCDB\Desktop\PROEVENTOS\back\src\ProEventos.Application\bin\Debug\net5.0\ref\ProEventos.Application.dll
+C:\Users\3346.ADM-UCDB\Desktop\PROEVENTOS\back\src\ProEventos.Application\bin\Debug\net5.0\ProEventos.Application.pdb
+C:\Users\3346.ADM-UCDB\Desktop\PROEVENTOS\back\src\ProEventos.Application\obj\Debug\net5.0\ProEventos.Application.csprojAssemblyReference.cache
+C:\Users\3346.ADM-UCDB\Desktop\PROEVENTOS\back\src\ProEventos.Application\obj\Debug\net5.0\ProEventos.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\3346.ADM-UCDB\Desktop\PROEVENTOS\back\src\ProEventos.Application\obj\Debug\net5.0\ProEventos.Application.AssemblyInfoInputs.cache
+C:\Users\3346.ADM-UCDB\Desktop\PROEVENTOS\back\src\ProEventos.Application\obj\Debug\net5.0\ProEventos.Application.AssemblyInfo.cs
+C:\Users\3346.ADM-UCDB\Desktop\PROEVENTOS\back\src\ProEventos.Application\obj\Debug\net5.0\ProEventos.Application.csproj.CoreCompileInputs.cache
+C:\Users\3346.ADM-UCDB\Desktop\PROEVENTOS\back\src\ProEventos.Application\obj\Debug\net5.0\ProEventos.Application.dll
+C:\Users\3346.ADM-UCDB\Desktop\PROEVENTOS\back\src\ProEventos.Application\obj\Debug\net5.0\ref\ProEventos.Application.dll
+C:\Users\3346.ADM-UCDB\Desktop\PROEVENTOS\back\src\ProEventos.Application\obj\Debug\net5.0\ProEventos.Application.pdb
+C:\Users\3346.ADM-UCDB\Desktop\PROEVENTOS\Back\src\ProEventos.Application\bin\Debug\net5.0\ProEventos.Domain.dll
+C:\Users\3346.ADM-UCDB\Desktop\PROEVENTOS\Back\src\ProEventos.Application\bin\Debug\net5.0\ProEventos.Persistence.dll
+C:\Users\3346.ADM-UCDB\Desktop\PROEVENTOS\Back\src\ProEventos.Application\bin\Debug\net5.0\ProEventos.Domain.pdb
+C:\Users\3346.ADM-UCDB\Desktop\PROEVENTOS\Back\src\ProEventos.Application\bin\Debug\net5.0\ProEventos.Persistence.pdb
+C:\Users\3346.ADM-UCDB\Desktop\PROEVENTOS\Back\src\ProEventos.Application\obj\Debug\net5.0\ProEventos.Application.csproj.CopyComplete
