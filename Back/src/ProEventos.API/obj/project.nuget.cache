@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "VVIOtifUCqHj6xLkP6GiR/auQZZ/IBBUTHbzuMe0EAuvQWXBCsacHz0+Hogih6dUm5gl6K64XoaDPpDiZ5eVjw==",
+  "dgSpecHash": "gVDPi8+7ub9ASYsdvxIi73eY2+jUhiqY+1WREn914LE0lGvCVVnKA/aKi4uBOoiNpi2m6f5musD73BDt80Lijw==",
   "success": true,
-  "projectFilePath": "c:\\Users\\3346.ADM-UCDB\\Desktop\\PROEVENTOS\\Back\\src\\ProEventos.API\\ProEventos.API.csproj",
+  "projectFilePath": "C:\\Users\\3346.ADM-UCDB\\Desktop\\PROEVENTOS\\Back\\src\\ProEventos.API\\ProEventos.API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\3346.ADM-UCDB\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\3346.ADM-UCDB\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\5.0.0\\microsoft.aspnetcore.authentication.jwtbearer.5.0.0.nupkg.sha512",

@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\3346.ADM-UCDB\\Desktop\\PROEVENTOS\\back\\src\\ProEventos.Domain\\ProEventos.Domain.csproj",
+      "projectUniqueName": "C:\\Users\\3346.ADM-UCDB\\Desktop\\PROEVENTOS\\Back\\src\\ProEventos.Domain\\ProEventos.Domain.csproj",
       "projectName": "ProEventos.Domain",
-      "projectPath": "C:\\Users\\3346.ADM-UCDB\\Desktop\\PROEVENTOS\\back\\src\\ProEventos.Domain\\ProEventos.Domain.csproj",
+      "projectPath": "C:\\Users\\3346.ADM-UCDB\\Desktop\\PROEVENTOS\\Back\\src\\ProEventos.Domain\\ProEventos.Domain.csproj",
       "packagesPath": "C:\\Users\\3346.ADM-UCDB\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\3346.ADM-UCDB\\Desktop\\PROEVENTOS\\back\\src\\ProEventos.Domain\\obj\\",
+      "outputPath": "C:\\Users\\3346.ADM-UCDB\\Desktop\\PROEVENTOS\\Back\\src\\ProEventos.Domain\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

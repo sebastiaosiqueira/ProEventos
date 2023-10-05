@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Ipher8ShOz5qyuZRD8ClyqKPs0LtlQSSr0xOtZt4j4MKTQRZ8l1EW6U0qdhQis1nOO43rmZNQDepViUG+CfXKA==",
+  "dgSpecHash": "DUrM5tSW/XAWYmzrf9Si3vshLPCAGk0KTNKRb2DyLYiM6Ui8LgvpnKf5PxKIU20TI1dD62JySlHkINPf3M4pGA==",
   "success": true,
-  "projectFilePath": "c:\\Users\\3346.ADM-UCDB\\Desktop\\PROEVENTOS\\Back\\src\\ProEventos.Persistence\\ProEventos.Persistence.csproj",
+  "projectFilePath": "C:\\Users\\3346.ADM-UCDB\\Desktop\\PROEVENTOS\\Back\\src\\ProEventos.Persistence\\ProEventos.Persistence.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\3346.ADM-UCDB\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\3346.ADM-UCDB\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",

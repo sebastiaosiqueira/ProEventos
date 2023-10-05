@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "cHOso4VC/CvApLkh/sSezkbLWFfJ4YZXCzZGtJ6xv1TR2mk9wYNZY+aD0f4g1M7zQYIvDVWHEtJsDihwoPl+KQ==",
+  "dgSpecHash": "Jk0Q4VteoRG7eFxjmeh/jBoHPBzRc6BdWpLobahmndNgJiQF+csOQ9wSF08BL+9FAtB8+R3SN6GQiIfqHlDv+w==",
   "success": true,
-  "projectFilePath": "c:\\Users\\3346.ADM-UCDB\\Desktop\\PROEVENTOS\\Back\\src\\ProEventos.Domain\\ProEventos.Domain.csproj",
+  "projectFilePath": "C:\\Users\\3346.ADM-UCDB\\Desktop\\PROEVENTOS\\Back\\src\\ProEventos.Domain\\ProEventos.Domain.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }
