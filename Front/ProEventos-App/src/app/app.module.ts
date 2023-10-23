@@ -1,12 +1,19 @@
-import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {HttpClientModule} from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import {CollapseModule} from 'ngx-bootstrap/collapse';
-import {TooltipModule} from 'ngx-bootstrap/tooltip';
+import { TooltipModule } from 'ngx-bootstrap/tooltip';
 import {BsDropdownModule} from 'ngx-bootstrap/dropdown';
 import {ModalModule} from 'ngx-bootstrap/modal';
+
+
+import {BsDatepickerModule} from 'ngx-bootstrap/datepicker';
+import {defineLocale} from 'ngx-bootstrap/chronos';
+import { ptBrLocale } from 'ngx-bootstrap/locale';
+
 
 import {ToastrModule} from 'ngx-toastr';
 import{NgxSpinnerModule} from 'ngx-spinner';
@@ -30,7 +37,7 @@ import { UserComponent } from './components/user/user.component';
 import { LoginComponent } from './components/user/login/login.component';
 import { RegistrationComponent } from './components/user/registration/registration.component';
 
-
+defineLocale('pt', ptBrLocale);
 
 @NgModule({
   declarations: [
@@ -51,6 +58,7 @@ import { RegistrationComponent } from './components/user/registration/registrati
    ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
   HttpClientModule,
   CollapseModule.forRoot(),
@@ -58,11 +66,11 @@ import { RegistrationComponent } from './components/user/registration/registrati
   ReactiveFormsModule,
   CollapseModule.forRoot(),
   BsDropdownModule.forRoot(),
+  BsDatepickerModule.forRoot(),
   ModalModule.forRoot(),
-  ToastrModule.forRoot({ timeOut:5000, positionClass:'toast-bottom-right', preventDuplicates:true, progressBar:true}),
-  NgxSpinnerModule
-
-
+  ToastrModule.forRoot({ timeOut:4000, positionClass:'toast-bottom-right', preventDuplicates:true, progressBar:true}),
+  NgxSpinnerModule,
+  TooltipModule
   ],
   providers: [EventoService],
   bootstrap: [AppComponent]

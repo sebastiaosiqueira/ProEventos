@@ -12,6 +12,7 @@ namespace ProEventos.Application
     {
         private readonly IEventoPersist _eventoPersist;
         private readonly IGeralPersist _geralPersist;
+        private readonly IMapper _mapper;
         public EventoService(IGeralPersist geralPersist, IEventoPersist eventoPersist, IMapper mapper)
         {
            
@@ -113,7 +114,7 @@ namespace ProEventos.Application
                 var eventos = await  _eventoPersist.GetEventoByIdAsync(eventoId, includePalestrantes);
                 if(eventos == null) return null;
 
-                var resultado = _mapper.Map<EventoDto>(evento);
+                var resultado = _mapper.Map<EventoDto>(eventos);
                 
                 return resultado;            }
             catch (Exception ex)
