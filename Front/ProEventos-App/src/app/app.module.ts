@@ -13,6 +13,7 @@ import {ModalModule} from 'ngx-bootstrap/modal';
 import {BsDatepickerModule} from 'ngx-bootstrap/datepicker';
 import {defineLocale} from 'ngx-bootstrap/chronos';
 import { ptBrLocale } from 'ngx-bootstrap/locale';
+import { NgxCurrencyModule } from 'ngx-currency';
 
 
 import {ToastrModule} from 'ngx-toastr';
@@ -28,6 +29,7 @@ import { PerfilComponent } from './components/user/perfil/perfil.component';
 import { NavComponent } from './shared/nav/nav.component';
 
 import { EventoService } from './services/evento.service';
+
 import { DateTimeFormatPipe } from './helpers/DateTimeFormat.pipe';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/compiler';
 import { TituloComponent } from './shared/titulo/titulo.component';
@@ -36,6 +38,7 @@ import { EventoListaComponent } from './components/eventos/evento-lista/evento-l
 import { UserComponent } from './components/user/user.component';
 import { LoginComponent } from './components/user/login/login.component';
 import { RegistrationComponent } from './components/user/registration/registration.component';
+import { LoteService } from './services/lote.service';
 
 defineLocale('pt', ptBrLocale);
 
@@ -70,9 +73,10 @@ defineLocale('pt', ptBrLocale);
   ModalModule.forRoot(),
   ToastrModule.forRoot({ timeOut:4000, positionClass:'toast-bottom-right', preventDuplicates:true, progressBar:true}),
   NgxSpinnerModule,
-  TooltipModule
+ NgxCurrencyModule,
+  TooltipModule.forRoot(),
   ],
-  providers: [EventoService],
+  providers: [EventoService, LoteService],
   bootstrap: [AppComponent]
   // schemas:[CUSTOM_ELEMENTS_SCHEMA]
 })

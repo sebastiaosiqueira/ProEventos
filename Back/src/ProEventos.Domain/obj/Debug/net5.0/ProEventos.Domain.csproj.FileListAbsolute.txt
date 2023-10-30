@@ -1,8 +1,6 @@
 C:\Users\3346.ADM-UCDB\Desktop\PROEVENTOS\back\src\ProEventos.Domain\bin\Debug\net5.0\ProEventos.Domain.deps.json
 C:\Users\3346.ADM-UCDB\Desktop\PROEVENTOS\back\src\ProEventos.Domain\bin\Debug\net5.0\ProEventos.Domain.dll
-C:\Users\3346.ADM-UCDB\Desktop\PROEVENTOS\back\src\ProEventos.Domain\bin\Debug\net5.0\ref\ProEventos.Domain.dll
 C:\Users\3346.ADM-UCDB\Desktop\PROEVENTOS\back\src\ProEventos.Domain\bin\Debug\net5.0\ProEventos.Domain.pdb
-C:\Users\3346.ADM-UCDB\Desktop\PROEVENTOS\back\src\ProEventos.Domain\obj\Debug\net5.0\ProEventos.Domain.csprojAssemblyReference.cache
 C:\Users\3346.ADM-UCDB\Desktop\PROEVENTOS\back\src\ProEventos.Domain\obj\Debug\net5.0\ProEventos.Domain.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\3346.ADM-UCDB\Desktop\PROEVENTOS\back\src\ProEventos.Domain\obj\Debug\net5.0\ProEventos.Domain.AssemblyInfoInputs.cache
 C:\Users\3346.ADM-UCDB\Desktop\PROEVENTOS\back\src\ProEventos.Domain\obj\Debug\net5.0\ProEventos.Domain.AssemblyInfo.cs
@@ -10,3 +8,5 @@ C:\Users\3346.ADM-UCDB\Desktop\PROEVENTOS\back\src\ProEventos.Domain\obj\Debug\n
 C:\Users\3346.ADM-UCDB\Desktop\PROEVENTOS\back\src\ProEventos.Domain\obj\Debug\net5.0\ProEventos.Domain.dll
 C:\Users\3346.ADM-UCDB\Desktop\PROEVENTOS\back\src\ProEventos.Domain\obj\Debug\net5.0\ref\ProEventos.Domain.dll
 C:\Users\3346.ADM-UCDB\Desktop\PROEVENTOS\back\src\ProEventos.Domain\obj\Debug\net5.0\ProEventos.Domain.pdb
+C:\Users\3346.ADM-UCDB\Desktop\PROEVENTOS\back\src\ProEventos.Domain\bin\Debug\net5.0\ref\ProEventos.Domain.dll
+C:\Users\3346.ADM-UCDB\Desktop\PROEVENTOS\back\src\ProEventos.Domain\obj\Debug\net5.0\ProEventos.Domain.csprojAssemblyReference.cache

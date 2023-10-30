@@ -35,7 +35,7 @@ namespace ProEventos.API.Controllers
            }
         
         }
-         [HttpGet("{id}")]
+         [HttpGet("id")]
         public async Task<IActionResult> GetById(int id)
         {
            try{
@@ -50,7 +50,7 @@ namespace ProEventos.API.Controllers
         
         }
 
-           [HttpGet("tema/{tema}")]
+           [HttpGet("tema/tema")]
         public async Task<IActionResult> GetById(string tema)
         {
            try{
@@ -85,7 +85,7 @@ namespace ProEventos.API.Controllers
            }
         }
 
-         [HttpPut("{id}")]
+         [HttpPut("id")]
          public async Task<IActionResult> Put(int id, EventoDto model ){
            try
            {
@@ -102,7 +102,7 @@ namespace ProEventos.API.Controllers
         }
 
         
-         [HttpDelete("{id}")]
+         [HttpDelete("id")]
          public async Task<IActionResult> Delete(int id){
            try
            {

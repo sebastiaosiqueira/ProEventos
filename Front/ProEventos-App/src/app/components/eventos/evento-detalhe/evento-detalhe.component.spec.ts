@@ -6,10 +6,14 @@ describe('EventoDetalheComponent', () => {
   let component: EventoDetalheComponent;
   let fixture: ComponentFixture<EventoDetalheComponent>;
 
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
+      declarations: [ EventoDetalheComponent ]
+    })
+    .compileComponents();
+  });
+
   beforeEach(() => {
-    TestBed.configureTestingModule({
-      declarations: [EventoDetalheComponent]
-    });
     fixture = TestBed.createComponent(EventoDetalheComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
