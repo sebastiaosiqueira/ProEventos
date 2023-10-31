@@ -6,10 +6,14 @@ describe('EventoListaComponent', () => {
   let component: EventoListaComponent;
   let fixture: ComponentFixture<EventoListaComponent>;
 
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
+      declarations: [ EventoListaComponent ]
+    })
+    .compileComponents();
+  });
+
   beforeEach(() => {
-    TestBed.configureTestingModule({
-      declarations: [EventoListaComponent]
-    });
     fixture = TestBed.createComponent(EventoListaComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
