@@ -27,7 +27,8 @@ namespace ProEventos.Application.Dtos
         [Required(ErrorMessage = "O {0} é obrigatório.")]
         [EmailAddressAttribute(ErrorMessage = "O campo {0} precisa ser um e-mail válido")]
         public string Email {get;set;}
-
+        public int UserId{get;set;}
+        public UserDto UserDto{get;set;}
         public IEnumerable<LoteDto> Lotes{get;set;}
         public IEnumerable<RedeSocialDto> RedeSociais{get;set;}
         public IEnumerable<PalestranteDto> Palestrantes{get;set;}
