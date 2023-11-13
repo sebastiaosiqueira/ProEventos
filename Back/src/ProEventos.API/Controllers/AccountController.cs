@@ -47,7 +47,12 @@ namespace ProEventos.API.Controllers
                 return BadRequest("Usuário já existe");
                 var user = await _accountService.CreateAccountAsync(userDto);
                 if(user!=null)
-                return Ok(user);
+                return Ok(
+                    new{
+                        userName = user.UserName,
+                        PrimeiroNome = user.PrimeiroNome,
+                        token = _tokenService.CreateToken(user).Result
+                    });
 
                 return BadRequest("Usuário não criado, tente novamente mais tarde!");
 
@@ -78,23 +83,31 @@ namespace ProEventos.API.Controllers
             }
         }
 
-         [HttpPost("UpdateUser}")]
-        public async Task<IActionResult> UpdateUser(UserUpdateDto userUpdateDto){
-            try{
+         [HttpPut("UpdateUser")]
+        public async Task<IActionResult> UpdateUser(UserUpdateDto userUpdateDto)
+        {
+            try
+            {
+                if (userUpdateDto.UserName != User.GetUserName())
+                    return Unauthorized("Usuário Inválido");
 
                 var user = await _accountService.GetUserByUserNameAsync(User.GetUserName());
-                if (user==null) return Unauthorized("Usuário inválido");
+                if (user == null) return Unauthorized("Usuário Inválido");
 
                 var userReturn = await _accountService.UpdateAccount(userUpdateDto);
-                if(userReturn ==null)
-                return NoContent();
-               
-                return Ok(userReturn);
+                if (userReturn == null) return NoContent();
 
-    
-
-            }catch(Exception ex){
-                return this.StatusCode(StatusCodes.Status500InternalServerError, $"Erro ao tentar atualizar o  usuário. Erro: {ex.Message}");
+                return Ok(new
+                {
+                    userName = userReturn.UserName,
+                    PrimeroNome = userReturn.PrimeiroNome,
+                    token = _tokenService.CreateToken(userReturn).Result
+                });
+            }
+            catch (Exception ex)
+            {
+                return this.StatusCode(StatusCodes.Status500InternalServerError,
+                    $"Erro ao tentar Atualizar Usuário. Erro: {ex.Message}");
             }
         }
         

@@ -42,6 +42,7 @@ import { UserComponent } from './components/user/user.component';
 import { LoginComponent } from './components/user/login/login.component';
 import { RegistrationComponent } from './components/user/registration/registration.component';
 import { RouterModule } from '@angular/router';
+import { HomeComponent } from './components/home/home.component';
 defineLocale('pt', ptBrLocale);
 
 @NgModule({
@@ -57,6 +58,7 @@ defineLocale('pt', ptBrLocale);
       DateTimeFormatPipe,
       EventoDetalheComponent,
       EventoListaComponent,
+      HomeComponent,
       UserComponent,
       LoginComponent,
       RegistrationComponent,
