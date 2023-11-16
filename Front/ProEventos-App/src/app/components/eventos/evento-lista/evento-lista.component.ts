@@ -9,6 +9,7 @@ import { environment } from '@environments/environment';
 
 import { Subject } from 'rxjs';
 import { debounceTime } from 'rxjs/operators';
+import { PaginatedResult, Pagination } from '@app/models/Pagination';
 
 @Component({
   selector: 'app-evento-lista',
@@ -36,7 +37,7 @@ export class EventoListaComponent implements OnInit {
           this.eventoService
             .getEventos(
               this.pagination.currentPage,
-              this.pagination.itemsPerPage,
+              this.pagination.ItemsPerPage,
               filtrarPor
             )
             .subscribe(
@@ -68,7 +69,7 @@ export class EventoListaComponent implements OnInit {
       currentPage: 1,
       itemsPerPage: 3,
       totalItems: 1,
-    } as Pagination;
+    } as unknown as Pagination;
 
     this.carregarEventos();
   }
@@ -87,7 +88,7 @@ export class EventoListaComponent implements OnInit {
     this.spinner.show();
 
     this.eventoService
-      .getEventos(this.pagination.currentPage, this.pagination.itemsPerPage)
+      .getEventos(this.pagination.currentPage, this.pagination.ItemsPerPage)
       .subscribe(
         (paginatedResult: PaginatedResult<Evento[]>) => {
           this.eventos = paginatedResult.result;
