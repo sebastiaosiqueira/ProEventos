@@ -6,10 +6,11 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using ProEventos.API;
+using ProEventos.Api.Helpers;
 using ProEventos.API.Extensions;
 using ProEventos.Application.Contratos;
 using ProEventos.Application.Dtos;
+
 namespace ProEventos.API.Controllers
 {
     [Authorize]
@@ -19,71 +20,89 @@ namespace ProEventos.API.Controllers
     {
         private readonly IAccountService _accountService;
         private readonly ITokenService _tokenService;
+        private readonly IUtil _util;
+
+        private readonly string _destino = "Perfil";
 
         public AccountController(IAccountService accountService,
-                                 ITokenService tokenService){
+                                 ITokenService tokenService,
+                                 IUtil util)
+        {
+            _util = util;
             _accountService = accountService;
-            _tokenService = tokenService ?? throw new ArgumentNullException(nameof(tokenService));
+            _tokenService = tokenService;
         }
 
         [HttpGet("GetUser")]
-        public async Task<IActionResult> GetUser(){
-            try{
+        public async Task<IActionResult> GetUser()
+        {
+            try
+            {
                 var userName = User.GetUserName();
                 var user = await _accountService.GetUserByUserNameAsync(userName);
                 return Ok(user);
-
-            }catch(Exception ex){
-                return this.StatusCode(StatusCodes.Status500InternalServerError, $"Erro ao tentar recuperar usuário. Erro: {ex.Message}");
+            }
+            catch (Exception ex)
+            {
+                return this.StatusCode(StatusCodes.Status500InternalServerError,
+                    $"Erro ao tentar recuperar Usuário. Erro: {ex.Message}");
             }
         }
 
-          [HttpPost("Register}")]
+        [HttpPost("Register")]
         [AllowAnonymous]
-        public async Task<IActionResult> Register(UserDto userDto){
-            try{
-                
-                if(await _accountService.UserExists(userDto.UserName))
-                return BadRequest("Usuário já existe");
+        public async Task<IActionResult> Register(UserDto userDto)
+        {
+            try
+            {
+                if (await _accountService.UserExists(userDto.UserName))
+                    return BadRequest("Usuário já existe");
+
                 var user = await _accountService.CreateAccountAsync(userDto);
-                if(user!=null)
-                return Ok(
-                    new{
+                if (user != null)
+                    return Ok(new
+                    {
                         userName = user.UserName,
-                        PrimeiroNome = user.PrimeiroNome,
+                        PrimeroNome = user.PrimeiroNome,
                         token = _tokenService.CreateToken(user).Result
                     });
 
                 return BadRequest("Usuário não criado, tente novamente mais tarde!");
-
-            }catch(Exception ex){
-                return this.StatusCode(StatusCodes.Status500InternalServerError, $"Erro ao tentar recuperar usuário. Erro: {ex.Message}");
+            }
+            catch (Exception ex)
+            {
+                return this.StatusCode(StatusCodes.Status500InternalServerError,
+                    $"Erro ao tentar Registrar Usuário. Erro: {ex.Message}");
             }
         }
 
-        [HttpGet("Login")]
+        [HttpPost("Login")]
         [AllowAnonymous]
-        public async Task<IActionResult> Login(UserLoginDto userlogin){
-            try{
-                var user = await _accountService.GetUserByUserNameAsync(userlogin.Username);
-                if(user == null) return Unauthorized("Usuário ou senha está errado");
+        public async Task<IActionResult> Login(UserLoginDto userLogin)
+        {
+            try
+            {
+                var user = await _accountService.GetUserByUserNameAsync(userLogin.Username);
+                if (user == null) return Unauthorized("Usuário ou Senha está errado");
 
-                var result = await _accountService.CheckUserPasswordAsync(user, userlogin.Password);
-                if(!result.Succeeded) return Unauthorized("Usário não inválido");
-                return Ok(
-                    new{
-                        userName = userlogin.Username,
-                        PrimeiroNome = user.PrimeiroNome,
-                        token = _tokenService.CreateToken(user).Result
-                    }
-                );
+                var result = await _accountService.CheckUserPasswordAsync(user, userLogin.Password);
+                if (!result.Succeeded) return Unauthorized();
 
-            }catch(Exception ex){
-                return this.StatusCode(StatusCodes.Status500InternalServerError, $"Erro ao tentar realizar login. Erro: {ex.Message}");
+                return Ok(new
+                {
+                    userName = user.UserName,
+                    PrimeroNome = user.PrimeiroNome,
+                    token = _tokenService.CreateToken(user).Result
+                });
+            }
+            catch (Exception ex)
+            {
+                return this.StatusCode(StatusCodes.Status500InternalServerError,
+                    $"Erro ao tentar realizar Login. Erro: {ex.Message}");
             }
         }
 
-         [HttpPut("UpdateUser")]
+        [HttpPut("UpdateUser")]
         public async Task<IActionResult> UpdateUser(UserUpdateDto userUpdateDto)
         {
             try
@@ -110,6 +129,30 @@ namespace ProEventos.API.Controllers
                     $"Erro ao tentar Atualizar Usuário. Erro: {ex.Message}");
             }
         }
-        
+
+        [HttpPost("upload-image")]
+        public async Task<IActionResult> UploadImage()
+        {
+            try
+            {
+                var user = await _accountService.GetUserByUserNameAsync(User.GetUserName());
+                if (user == null) return NoContent();
+
+                var file = Request.Form.Files[0];
+                if (file.Length > 0)
+                {
+                    _util.DeleteImage(user.ImagemURL, _destino);
+                    user.ImagemURL = await _util.SaveImage(file, _destino);
+                }
+                var userRetorno = await _accountService.UpdateAccount(user);
+
+                return Ok(userRetorno);
+            }
+            catch (Exception ex)
+            {
+                return this.StatusCode(StatusCodes.Status500InternalServerError,
+                    $"Erro ao tentar realizar upload de Foto do Usuário. Erro: {ex.Message}");
+            }
+        }
     }
 }
