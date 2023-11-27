@@ -11,11 +11,10 @@ import { ModalModule } from 'ngx-bootstrap/modal';
 import { PaginationModule } from 'ngx-bootstrap/pagination';
 import { TabsModule } from 'ngx-bootstrap/tabs';
 
-
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 import { defineLocale } from 'ngx-bootstrap/chronos';
 import { ptBrLocale } from 'ngx-bootstrap/locale';
-import { NgxCurrencyDirective } from "ngx-currency";
+import { NgxCurrencyModule } from 'ngx-currency';
 
 import { ToastrModule } from 'ngx-toastr';
 import { NgxSpinnerModule } from 'ngx-spinner';
@@ -26,7 +25,10 @@ import { ContatosComponent } from './components/contatos/contatos.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { EventosComponent } from './components/eventos/eventos.component';
 import { PalestrantesComponent } from './components/palestrantes/palestrantes.component';
+import { PalestranteDetalheComponent } from './components/palestrantes/palestrante-detalhe/palestrante-detalhe.component';
+import { PalestranteListaComponent } from './components/palestrantes/palestrante-lista/palestrante-lista.component';
 import { PerfilComponent } from './components/user/perfil/perfil.component';
+import { PerfilDetalheComponent } from './components/user/perfil/perfil-detalhe/perfil-detalhe.component';
 import { NavComponent } from './shared/nav/nav.component';
 import { TituloComponent } from './shared/titulo/titulo.component';
 
@@ -42,29 +44,34 @@ import { EventoListaComponent } from './components/eventos/evento-lista/evento-l
 import { UserComponent } from './components/user/user.component';
 import { LoginComponent } from './components/user/login/login.component';
 import { RegistrationComponent } from './components/user/registration/registration.component';
-import { RouterModule } from '@angular/router';
 import { HomeComponent } from './components/home/home.component';
-defineLocale('pt', ptBrLocale);
+import { RedesSociaisComponent } from './components/redesSociais/redesSociais.component';
+
+defineLocale('pt-br', ptBrLocale);
 
 @NgModule({
   declarations: [
     AppComponent,
     EventosComponent,
-      PalestrantesComponent,
-      ContatosComponent,
-      DashboardComponent,
-      PerfilComponent,
-      NavComponent,
-      TituloComponent,
-      DateTimeFormatPipe,
-      EventoDetalheComponent,
-      EventoListaComponent,
-      HomeComponent,
-      UserComponent,
-      LoginComponent,
-      RegistrationComponent,
-   ],
-   imports: [
+    PalestrantesComponent,
+    PalestranteListaComponent,
+    PalestranteDetalheComponent,
+    ContatosComponent,
+    DashboardComponent,
+    PerfilComponent,
+    PerfilDetalheComponent,
+    RedesSociaisComponent,
+    NavComponent,
+    TituloComponent,
+    DateTimeFormatPipe,
+    EventoDetalheComponent,
+    EventoListaComponent,
+    HomeComponent,
+    UserComponent,
+    LoginComponent,
+    RegistrationComponent,
+  ],
+  imports: [
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
@@ -85,7 +92,7 @@ defineLocale('pt', ptBrLocale);
       progressBar: true,
     }),
     NgxSpinnerModule,
-    [NgxCurrencyDirective]
+    NgxCurrencyModule,
   ],
   providers: [
     AccountService,
